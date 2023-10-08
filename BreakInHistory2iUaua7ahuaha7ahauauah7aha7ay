@@ -23,3 +23,99 @@ Tab1:Line()
 
 Tab1:Seperator("🍭 = Items = 🍶")
 
+Tab1:Button("🍶 • Bottle",function()
+    local args = {
+    [1] = "Bottle"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("GiveTool"):FireServer(unpack(args))
+end)
+
+Tab1:Button("🥫 • Bloxy Cola",function()
+    local args = {
+    [1] = "BloxyCola"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("GiveTool"):FireServer(unpack(args))
+end)
+
+Tab1:Button("🍪 • Cookies",function()
+    local args = {
+    [1] = "Cookie"
+}
+
+Tab1:Button("🥔 • Chips",function()
+    local args = {
+    [1] = "Chips"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("GiveTool"):FireServer(unpack(args))
+end)
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("GiveTool"):FireServer(unpack(args))
+end)
+
+Tab1:Button("🍎 • Apple",function()
+    local args = {
+    [1] = "Apple"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("GiveTool"):FireServer(unpack(args))
+end)
+
+Tab1:Button("🍎 • Golden Apple",function()
+    local args = {
+    [1] = "GoldenApple"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("GiveTool"):FireServer(unpack(args))
+end)
+
+Tab1:Button("🍕 • Pizza",function()
+    local args = {
+    [1] = "Pizza"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("GiveTool"):FireServer(unpack(args))
+end)
+
+Tab1:Button("🍕 • Golden Pizza",function()
+    local args = {
+    [1] = "GoldPizza"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("GiveTool"):FireServer(unpack(args))
+end)
+
+Tab1:Button("🍕 • Rainbow Pizza",function()
+    local args = {
+    [1] = "RainbowPizza"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("GiveTool"):FireServer(unpack(args))
+end)
+
+Tab1:Button("🗡️ • Crowbar",function()
+    local args = {
+    [1] = "Crowbar"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("GiveTool"):FireServer(unpack(args))
+end)
+
+Tab1:Seperator("↩️ = Others = ↩️")
+
+Tab1:Button("🩺 • + Energy",function()
+    local args = {
+    [1] = game:GetService("Players").LocalPlayer,
+    [2] = game:GetService("Players").LocalPlayer
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("CurePlayer"):FireServer(unpack(args))
+
+end)
+
+Tab1:Line()
+
+--]]
+[[
