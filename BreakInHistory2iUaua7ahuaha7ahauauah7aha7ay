@@ -1,0 +1,24 @@
+local DarkraiX = loadstring(game:HttpGet("https://raw.githubusercontent.com/GamingScripter/Kavo-Ui/main/Darkrai%20Ui", true))()
+
+--- Window
+
+local Library = DarkraiX:Window("Harlen Hub","","",Enum.KeyCode.RightControl);
+
+--- Botão
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Fe773Vdoa/ButtonIJheushauuaya7Ha7auuahd-s/main/ButtonIahhwuaha7wg7wyee8"))()
+
+--- Tabs
+
+Tab1 = Library:Tab("🚪┃Main")
+Tab2 = Library:Tab("📍┃Teleport")
+
+--- Section
+
+Tab1:Label("Brazilian Script By Harlen_Br0")
+
+--- Botões
+
+Tab1:Line()
+
+Tab1:Seperator("📍 = Teleport = 📍")
