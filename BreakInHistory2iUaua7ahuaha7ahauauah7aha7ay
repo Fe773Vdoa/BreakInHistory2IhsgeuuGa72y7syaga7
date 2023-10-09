@@ -121,5 +121,103 @@ end)
 
 Tab1:Line()
 
+Tab2:Line()
+
+Tab2:Seperator("🏬 = Teleports Of Base = 🏬")
+
+Tab2:Button("🚪 • Door",function()
+    local plr = game.Players.LocalPlayer
+local plrRP = plr.Character:FindFirstChild("HumanoidRootPart")
+if plrRP then
+  TweenSpeed = 200
+  TweenPos = CFrame.new(-210.7603302001953, 29.54897689819336, -790.7227172851562)
+  -- ///////////////////////////// --
+  local distance = (plrRP.Position - TweenPos.p).Magnitude
+  local duration = distance / TweenSpeed
+  local tween = game:GetService("TweenService"):Create(plrRP, TweenInfo.new(duration), {CFrame = TweenPos})
+  tween:Play()
+  tween.Completed:Wait()
+end
+end)
+
+Tab2:Button("🛍️ • Shop",function()
+    local plr = game.Players.LocalPlayer
+local plrRP = plr.Character:FindFirstChild("HumanoidRootPart")
+if plrRP then
+  TweenSpeed = 200
+  TweenPos = CFrame.new(-247.7843475341797, 29.53997802734375, -841.1961669921875)
+  -- ///////////////////////////// --
+  local distance = (plrRP.Position - TweenPos.p).Magnitude
+  local duration = distance / TweenSpeed
+  local tween = game:GetService("TweenService"):Create(plrRP, TweenInfo.new(duration), {CFrame = TweenPos})
+  tween:Play()
+  tween.Completed:Wait()
+end
+end)
+
+Tab2:Button("👨‍🍳 • Kitchen",function()
+    local plr = game.Players.LocalPlayer
+local plrRP = plr.Character:FindFirstChild("HumanoidRootPart")
+if plrRP then
+  TweenSpeed = 200
+  TweenPos = CFrame.new(-247.24278259277344, 29.56247901916504, -740.1373901367188)
+  -- ///////////////////////////// --
+  local distance = (plrRP.Position - TweenPos.p).Magnitude
+  local duration = distance / TweenSpeed
+  local tween = game:GetService("TweenService"):Create(plrRP, TweenInfo.new(duration), {CFrame = TweenPos})
+  tween:Play()
+  tween.Completed:Wait()
+end
+end)
+
+Tab2:Button("🏋️‍♂️ • Gym",function()
+    local plr = game.Players.LocalPlayer
+local plrRP = plr.Character:FindFirstChild("HumanoidRootPart")
+if plrRP then
+  TweenSpeed = 200
+  TweenPos = CFrame.new(-256.495361328125, 62.539974212646484, -843.7371215820312)
+  -- ///////////////////////////// --
+  local distance = (plrRP.Position - TweenPos.p).Magnitude
+  local duration = distance / TweenSpeed
+  local tween = game:GetService("TweenService"):Create(plrRP, TweenInfo.new(duration), {CFrame = TweenPos})
+  tween:Play()
+  tween.Completed:Wait()
+end
+end)
+
+Tab2:Button("🎭 • Place To Kill Thieves",function()
+    local plr = game.Players.LocalPlayer
+local plrRP = plr.Character:FindFirstChild("HumanoidRootPart")
+if plrRP then
+  TweenSpeed = 200
+  TweenPos = CFrame.new(-263.0380554199219, 60.428035736083984, -746.5159301757812)
+  -- ///////////////////////////// --
+  local distance = (plrRP.Position - TweenPos.p).Magnitude
+  local duration = distance / TweenSpeed
+  local tween = game:GetService("TweenService"):Create(plrRP, TweenInfo.new(duration), {CFrame = TweenPos})
+  tween:Play()
+  tween.Completed:Wait()
+end
+end)
+
+Tab2:Seperator("↩️ = Others Teleports = ↩️")
+
+Tab2:Button("🐕 • Dog House",function()
+    local plr = game.Players.LocalPlayer
+local plrRP = plr.Character:FindFirstChild("HumanoidRootPart")
+if plrRP then
+  TweenSpeed = 200
+  TweenPos = CFrame.new(-262.9268798828125, 44.74205780029297, -910.1727905273438)
+  -- ///////////////////////////// --
+  local distance = (plrRP.Position - TweenPos.p).Magnitude
+  local duration = distance / TweenSpeed
+  local tween = game:GetService("TweenService"):Create(plrRP, TweenInfo.new(duration), {CFrame = TweenPos})
+  tween:Play()
+  tween.Completed:Wait()
+end
+end)
+
+Tab2:Line()
+
 --[[
 ]]
