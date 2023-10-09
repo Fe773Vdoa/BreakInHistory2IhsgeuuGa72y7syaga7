@@ -55,7 +55,7 @@ Tab1:Button("🥔 • Chips",function()
 game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("GiveTool"):FireServer(unpack(args))
 end)
 
-Tab1:Button("🍭 • Lollipop",function()
+Tab1:Button("🍭 • Lollipop( Good For Speed )",function()
     local args = {
     [1] = "Lollipop"
 }
@@ -71,7 +71,7 @@ Tab1:Button("🍎 • Apple",function()
 game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("GiveTool"):FireServer(unpack(args))
 end)
 
-Tab1:Button("🍎 • Golden Apple",function()
+Tab1:Button("🍎 • Golden Apple( Good For Healt All Players )",function()
     local args = {
     [1] = "GoldenApple"
 }
@@ -87,7 +87,7 @@ Tab1:Button("🍕 • Pizza",function()
 game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("GiveTool"):FireServer(unpack(args))
 end)
 
-Tab1:Button("🍕 • Golden Pizza",function()
+Tab1:Button("🍕 • Golden Pizza( Good For Healt You )",function()
     local args = {
     [1] = "GoldPizza"
 }
@@ -95,7 +95,7 @@ Tab1:Button("🍕 • Golden Pizza",function()
 game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("GiveTool"):FireServer(unpack(args))
 end)
 
-Tab1:Button("🍕 • Rainbow Pizza",function()
+Tab1:Button("🍕 • Rainbow Pizza( Good For Leveling Up At The Gym )",function()
     local args = {
     [1] = "RainbowPizza"
 }
