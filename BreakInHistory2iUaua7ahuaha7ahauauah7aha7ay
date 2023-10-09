@@ -130,7 +130,7 @@ Tab2:Button("🚪 • Door",function()
 local plrRP = plr.Character:FindFirstChild("HumanoidRootPart")
 if plrRP then
   TweenSpeed = 200
-  TweenPos = CFrame.new(-210.7603302001953, 29.54897689819336, -790.7227172851562)
+  TweenPos = CFrame.new(-201.83717346191406, 31.172786712646484, -791.338623046875)
   -- ///////////////////////////// --
   local distance = (plrRP.Position - TweenPos.p).Magnitude
   local duration = distance / TweenSpeed
