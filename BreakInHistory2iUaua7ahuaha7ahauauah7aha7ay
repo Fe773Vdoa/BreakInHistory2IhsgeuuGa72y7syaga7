@@ -44,6 +44,9 @@ Tab1:Button("🍪 • Cookies",function()
     [1] = "Cookie"
 }
 
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("GiveTool"):FireServer(unpack(args))
+end)
+
 Tab1:Button("🥔 • Chips",function()
     local args = {
     [1] = "Chips"
