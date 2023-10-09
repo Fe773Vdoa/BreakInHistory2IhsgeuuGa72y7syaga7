@@ -55,6 +55,14 @@ Tab1:Button("🥔 • Chips",function()
 game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("GiveTool"):FireServer(unpack(args))
 end)
 
+Tab1:Button("🍭 • Lollipop",function()
+    local args = {
+    [1] = "Lollipop"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("GiveTool"):FireServer(unpack(args))
+end)
+
 Tab1:Button("🍎 • Apple",function()
     local args = {
     [1] = "Apple"
@@ -103,10 +111,24 @@ Tab1:Button("🗡️ • Crowbar",function()
 game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("GiveTool"):FireServer(unpack(args))
 end)
 
+Tab1:Button("🩺 • MedKit",function()
+    local args = {
+    [1] = "MedKit"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("GiveTool"):FireServer(unpack(args))
+end)
+
 Tab1:Seperator("↩️ = Others = ↩️")
 
 Tab1:Button("🩺 • + Energy",function()
     local args = {
+    [1] = "GoldPizza"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("GiveTool"):FireServer(unpack(args))
+
+local args = {
     [1] = game:GetService("Players").LocalPlayer,
     [2] = game:GetService("Players").LocalPlayer
 }
