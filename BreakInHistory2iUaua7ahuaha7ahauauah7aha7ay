@@ -134,7 +134,6 @@ local args = {
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("CurePlayer"):FireServer(unpack(args))
-
 end)
 
 Tab1:Line()
