@@ -119,23 +119,6 @@ Tab1:Button("🩺 • MedKit",function()
 game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("GiveTool"):FireServer(unpack(args))
 end)
 
-Tab1:Seperator("↩️ = Others = ↩️")
-
-Tab1:Button("🩺 • + Energy",function()
-    local args = {
-    [1] = "GoldPizza"
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("GiveTool"):FireServer(unpack(args))
-
-local args = {
-    [1] = game:GetService("Players").LocalPlayer,
-    [2] = game:GetService("Players").LocalPlayer
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("CurePlayer"):FireServer(unpack(args))
-end)
-
 Tab1:Line()
 
 --[[
