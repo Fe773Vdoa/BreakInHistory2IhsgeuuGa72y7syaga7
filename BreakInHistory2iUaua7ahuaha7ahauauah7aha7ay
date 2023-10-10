@@ -21,6 +21,24 @@ Tab1:Label("Brazilian Script By Harlen_Br0")
 
 Tab1:Line()
 
+Tab1:Seperator("🏋️‍♂️ = Gym Stats = 🏃")
+
+Tab1:Button("🏃 • +1 Speed Stats",function()
+    local args = {
+    [1] = "Speed"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("RainbowWhatStat"):FireServer(unpack(args))
+end)
+
+Tab1:Button("🏋️‍♂️ • +1 Strength Stats",function()
+    local args = {
+    [1] = "Strength"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("RainbowWhatStat"):FireServer(unpack(args))
+end)
+
 Tab1:Seperator("🍭 = Items = 🍶")
 
 Tab1:Button("🍶 • Bottle",function()
