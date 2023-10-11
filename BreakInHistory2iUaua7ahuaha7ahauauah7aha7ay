@@ -235,6 +235,37 @@ if plrRP then
 end
 end)
 
+Tab2:Button("🕵️ • Detective Room",function()
+    local plr = game.Players.LocalPlayer
+local plrRP = plr.Character:FindFirstChild("HumanoidRootPart")
+if plrRP then
+  TweenSpeed = 200
+  TweenPos = CFrame.new(-271.1482849121094, 96.17273712158203, -790.8104858398438)
+  -- ///////////////////////////// --
+  local distance = (plrRP.Position - TweenPos.p).Magnitude
+  local duration = distance / TweenSpeed
+  local tween = game:GetService("TweenService"):Create(plrRP, TweenInfo.new(duration), {CFrame = TweenPos})
+  tween:Play()
+  tween.Completed:Wait()
+end
+end)
+
+Tab2:Button("👴 • Uncle Pete",function()
+    local plr = game.Players.LocalPlayer
+local plrRP = plr.Character:FindFirstChild("HumanoidRootPart")
+if plrRP then
+  TweenSpeed = 200
+  TweenPos = CFrame.new(-293.99029541015625, 64.14099884033203, -728.0593872070312)
+  -- ///////////////////////////// --
+  local distance = (plrRP.Position - TweenPos.p).Magnitude
+  local duration = distance / TweenSpeed
+  local tween = game:GetService("TweenService"):Create(plrRP, TweenInfo.new(duration), {CFrame = TweenPos})
+  tween:Play()
+  tween.Completed:Wait()
+end
+end)
+
+
 Tab2:Line()
 
 --[[
