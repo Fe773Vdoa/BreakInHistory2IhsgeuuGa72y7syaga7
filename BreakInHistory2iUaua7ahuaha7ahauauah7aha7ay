@@ -81,19 +81,19 @@ Tab1:Button("🍎 • Apple",function()
 game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("GiveTool"):FireServer(unpack(args))
 end)
 
-Tab1:Seperator("💎 = Rare Food = 💍")
-
-Tab1:Button("🍎 • Golden Apple( Good For Healt All Players )",function()
+Tab1:Button("🍕 • Pizza",function()
     local args = {
-    [1] = "GoldenApple"
+    [1] = "Pizza"
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("GiveTool"):FireServer(unpack(args))
 end)
 
-Tab1:Button("🍕 • Pizza",function()
+Tab1:Seperator("💎 = Rare Food = 💍")
+
+Tab1:Button("🍎 • Golden Apple( Good For Healt All Players )",function()
     local args = {
-    [1] = "Pizza"
+    [1] = "GoldenApple"
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("GiveTool"):FireServer(unpack(args))
@@ -114,6 +114,16 @@ Tab1:Button("🍕 • Rainbow Pizza( Good For Leveling Up At The Gym )",function
 
 game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("GiveTool"):FireServer(unpack(args))
 end)
+
+Tab1:Button("🍕 • Rainbow Pizza Box",function()
+    local args = {
+    [1] = "RainbowPizzaBox"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("GiveTool"):FireServer(unpack(args))
+end)
+
+Tab1:Seperator("↩️ = Othee Items = ↩️")
 
 Tab1:Button("🗡️ • Crowbar",function()
     local args = {
