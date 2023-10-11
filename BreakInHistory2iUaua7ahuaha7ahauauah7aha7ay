@@ -123,7 +123,7 @@ Tab1:Button("🍕 • Rainbow Pizza Box",function()
 game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("GiveTool"):FireServer(unpack(args))
 end)
 
-Tab1:Seperator("↩️ = Othee Items = ↩️")
+Tab1:Seperator("↩️ = Other Items = ↩️")
 
 Tab1:Button("🗡️ • Crowbar",function()
     local args = {
