@@ -141,9 +141,9 @@ Tab1:Button("🩺 • MedKit",function()
 game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("GiveTool"):FireServer(unpack(args))
 end)
 
-Tab1:Button("🔋 • Batery",function()
+Tab1:Button("🔋 • Battery",function()
     local args = {
-    [1] = "Batery"
+    [1] = "Battery"
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("GiveTool"):FireServer(unpack(args))
