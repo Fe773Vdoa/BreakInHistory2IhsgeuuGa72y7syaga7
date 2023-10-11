@@ -141,6 +141,22 @@ Tab1:Button("🩺 • MedKit",function()
 game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("GiveTool"):FireServer(unpack(args))
 end)
 
+Tab1:Button("🔋 • Batery",function()
+    local args = {
+    [1] = "Batery"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("GiveTool"):FireServer(unpack(args))
+end)
+
+Tab1:Button("🔑 • Key Of Uncle Pete Prison Cell",function()
+    local args = {
+    [1] = "Key"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("GiveTool"):FireServer(unpack(args))
+end)
+
 Tab1:Line()
 
 Tab2:Line()
