@@ -39,7 +39,7 @@ Tab1:Button("🏋️‍♂️ • +1 Strength Stats",function()
 game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("RainbowWhatStat"):FireServer(unpack(args))
 end)
 
-Tab1:Seperator("🍭 = Items = 🍶")
+Tab1:Seperator("🍭 = Food = 🍶")
 
 Tab1:Button("🍶 • Bottle",function()
     local args = {
@@ -73,14 +73,6 @@ Tab1:Button("🥔 • Chips",function()
 game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("GiveTool"):FireServer(unpack(args))
 end)
 
-Tab1:Button("🍭 • Lollipop( Good For Speed )",function()
-    local args = {
-    [1] = "Lollipop"
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("GiveTool"):FireServer(unpack(args))
-end)
-
 Tab1:Button("🍎 • Apple",function()
     local args = {
     [1] = "Apple"
@@ -88,6 +80,8 @@ Tab1:Button("🍎 • Apple",function()
 
 game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("GiveTool"):FireServer(unpack(args))
 end)
+
+Tab1:Seperator("💎 = Rare Food = 💍")
 
 Tab1:Button("🍎 • Golden Apple( Good For Healt All Players )",function()
     local args = {
