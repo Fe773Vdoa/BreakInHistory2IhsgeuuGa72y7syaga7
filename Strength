@@ -1,0 +1,35 @@
+local args = {
+    [1] = "Strength"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("RainbowWhatStat"):FireServer(unpack(args))
+
+
+
+
+
+local args = {
+    [1] = "Strength"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("RainbowWhatStat"):FireServer(unpack(args))
+
+
+
+
+
+local args = {
+    [1] = "Strength"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("RainbowWhatStat"):FireServer(unpack(args))
+
+
+
+
+
+local args = {
+    [1] = "Strength"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("RainbowWhatStat"):FireServer(unpack(args))
