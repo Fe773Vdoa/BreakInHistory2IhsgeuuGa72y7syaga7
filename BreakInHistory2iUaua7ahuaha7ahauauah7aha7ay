@@ -40,67 +40,11 @@ game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Rainbo
 end)
 
 Tab1:Button("🏃 • Max Speed Stats",function()
-    local args = {
-    [1] = "Speed"
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("RainbowWhatStat"):FireServer(unpack(args))
-
-local args = {
-    [1] = "Speed"
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("RainbowWhatStat"):FireServer(unpack(args))
-
-local args = {
-    [1] = "Speed"
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("RainbowWhatStat"):FireServer(unpack(args))
-
-local args = {
-    [1] = "Speed"
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("RainbowWhatStat"):FireServer(unpack(args))
-
-local args = {
-    [1] = "Speed"
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("RainbowWhatStat"):FireServer(unpack(args))
+    loadstring(game:HttpGet("https://github.com/Fe773Vdoa/BreakInHistory2IhsgeuuGa72y7syaga7/raw/main/Speed"))()
 end)
 
 Tab1:Button("🏋️‍♂️ • Max Strength Stats",function()
-    local args = {
-    [1] = "Strength"
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("RainbowWhatStat"):FireServer(unpack(args))
-
-local args = {
-    [1] = "Strength"
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("RainbowWhatStat"):FireServer(unpack(args))
-
-local args = {
-    [1] = "Strength"
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("RainbowWhatStat"):FireServer(unpack(args))
-
-local args = {
-    [1] = "Strength"
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("RainbowWhatStat"):FireServer(unpack(args))
-
-local args = {
-    [1] = "Strength"
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("RainbowWhatStat"):FireServer(unpack(args))
+    loadstring(game:HttpGet("https://github.com/Fe773Vdoa/BreakInHistory2IhsgeuuGa72y7syaga7/raw/main/Strength"))()
 end)
 
 end)
