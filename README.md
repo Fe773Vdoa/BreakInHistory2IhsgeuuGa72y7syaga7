@@ -1,3 +1,3 @@
 # Break In History
 
-*Due*
+/Due/
