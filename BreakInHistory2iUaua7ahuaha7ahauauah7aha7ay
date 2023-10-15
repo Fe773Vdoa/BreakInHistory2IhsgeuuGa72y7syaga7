@@ -21,7 +21,7 @@ Tab1:Label("Brazilian Script By Harlen_Br0")
 
 Tab1:Line()
 
-Tab1:Seperator("🏋️‍♂️ = Get Gym Stats = 🏃")
+Tab1:Seperator("🏋️‍♂️ = Gym Stats = 🏃")
 
 Tab1:Button("🏃 • +1 Speed Stats",function()
     local args = {
@@ -49,7 +49,7 @@ end)
 
 end)
 
-Tab1:Seperator("🍭 = Get Food = 🍶")
+Tab1:Seperator("🍭 = Food = 🍶")
 
 Tab1:Button("🍶 • Bottle",function()
     local args = {
@@ -99,7 +99,7 @@ Tab1:Button("🍕 • Pizza",function()
 game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("GiveTool"):FireServer(unpack(args))
 end)
 
-Tab1:Seperator("💎 = Get Rare Food = 💍")
+Tab1:Seperator("💎 = Rare Food = 💍")
 
 Tab1:Button("🍎 • Golden Apple( Good For Healt All Players )",function()
     local args = {
@@ -133,7 +133,7 @@ Tab1:Button("🍕 • Rainbow Pizza Box",function()
 game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("GiveTool"):FireServer(unpack(args))
 end)
 
-Tab1:Seperator("↩️ = Get Other Items = ↩️")
+Tab1:Seperator("↩️ = Other Items = ↩️")
 
 Tab1:Button("🗡️ • Crowbar",function()
     local args = {
