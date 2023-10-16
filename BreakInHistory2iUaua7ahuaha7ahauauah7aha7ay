@@ -21,9 +21,9 @@ Tab1:Label("Brazilian Script By Harlen_Br0")
 
 Tab1:Line()
 
-Tab1:Seperator("🏋️‍♂️ = Gym Stats = 🏃")
+Tab1:Seperator("🏋️‍♂️ = Get Gym Stats = 🏃")
 
-Tab1:Button("🏃 • +1 Speed Stats",function()
+Tab1:Button("🏃 • Get +1 Speed Stats",function()
     local args = {
     [1] = "Speed"
 }
@@ -31,7 +31,7 @@ Tab1:Button("🏃 • +1 Speed Stats",function()
 game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("RainbowWhatStat"):FireServer(unpack(args))
 end)
 
-Tab1:Button("🏋️‍♂️ • +1 Strength Stats",function()
+Tab1:Button("🏋️‍♂️ • Get +1 Strength Stats",function()
     local args = {
     [1] = "Strength"
 }
@@ -39,17 +39,17 @@ Tab1:Button("🏋️‍♂️ • +1 Strength Stats",function()
 game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("RainbowWhatStat"):FireServer(unpack(args))
 end)
 
-Tab1:Button("🏃 • Max Speed Stats",function()
+Tab1:Button("🏃 • Get Max Speed Stats",function()
     loadstring(game:HttpGet("https://github.com/Fe773Vdoa/BreakInHistory2IhsgeuuGa72y7syaga7/raw/main/Speed"))()
 end)
 
-Tab1:Button("🏋️‍♂️ • Max Strength Stats",function()
+Tab1:Button("🏋️‍♂️ • Get Max Strength Stats",function()
     loadstring(game:HttpGet("https://github.com/Fe773Vdoa/BreakInHistory2IhsgeuuGa72y7syaga7/raw/main/Strength"))()
 end)
 
-Tab1:Seperator("🍭 = Food = 🍶")
+Tab1:Seperator("🍭 = Get Food = 🍶")
 
-Tab1:Button("🍶 • Bottle",function()
+Tab1:Button("🍶 • Get Bottle( Good For Train )",function()
     local args = {
     [1] = "Bottle"
 }
@@ -57,7 +57,7 @@ Tab1:Button("🍶 • Bottle",function()
 game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("GiveTool"):FireServer(unpack(args))
 end)
 
-Tab1:Button("🥫 • Bloxy Cola",function()
+Tab1:Button("🥫 • Get Bloxy Cola( Good For Get Speed )",function()
     local args = {
     [1] = "BloxyCola"
 }
@@ -65,7 +65,7 @@ Tab1:Button("🥫 • Bloxy Cola",function()
 game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("GiveTool"):FireServer(unpack(args))
 end)
 
-Tab1:Button("🍪 • Cookies",function()
+Tab1:Button("🍪 • Get Cookies",function()
     local args = {
     [1] = "Cookie"
 }
@@ -73,7 +73,7 @@ Tab1:Button("🍪 • Cookies",function()
 game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("GiveTool"):FireServer(unpack(args))
 end)
 
-Tab1:Button("🥔 • Chips",function()
+Tab1:Button("🥔 • Get Chips",function()
     local args = {
     [1] = "Chips"
 }
@@ -81,7 +81,7 @@ Tab1:Button("🥔 • Chips",function()
 game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("GiveTool"):FireServer(unpack(args))
 end)
 
-Tab1:Button("🍎 • Apple",function()
+Tab1:Button("🍎 • Get Apple",function()
     local args = {
     [1] = "Apple"
 }
@@ -89,7 +89,7 @@ Tab1:Button("🍎 • Apple",function()
 game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("GiveTool"):FireServer(unpack(args))
 end)
 
-Tab1:Button("🍕 • Pizza",function()
+Tab1:Button("🍕 • Get Pizza",function()
     local args = {
     [1] = "Pizza"
 }
@@ -97,9 +97,9 @@ Tab1:Button("🍕 • Pizza",function()
 game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("GiveTool"):FireServer(unpack(args))
 end)
 
-Tab1:Seperator("💎 = Rare Food = 💍")
+Tab1:Seperator("💎 = Get Rare Food = 💍")
 
-Tab1:Button("🍎 • Golden Apple( Good For Healt All Players )",function()
+Tab1:Button("🍎 • Get Golden Apple( Good For Healt All Players )",function()
     local args = {
     [1] = "GoldenApple"
 }
@@ -107,7 +107,7 @@ Tab1:Button("🍎 • Golden Apple( Good For Healt All Players )",function()
 game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("GiveTool"):FireServer(unpack(args))
 end)
 
-Tab1:Button("🍕 • Golden Pizza( Good For Healt You )",function()
+Tab1:Button("🍕 • Get Golden Pizza( Good For Healt You )",function()
     local args = {
     [1] = "GoldPizza"
 }
@@ -115,7 +115,7 @@ Tab1:Button("🍕 • Golden Pizza( Good For Healt You )",function()
 game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("GiveTool"):FireServer(unpack(args))
 end)
 
-Tab1:Button("🍕 • Rainbow Pizza( Good For Leveling Up At The Gym )",function()
+Tab1:Button("🍕 • Get Rainbow Pizza( Good For Leveling Up At The Gym )",function()
     local args = {
     [1] = "RainbowPizza"
 }
@@ -123,7 +123,7 @@ Tab1:Button("🍕 • Rainbow Pizza( Good For Leveling Up At The Gym )",function
 game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("GiveTool"):FireServer(unpack(args))
 end)
 
-Tab1:Button("🍕 • Rainbow Pizza Box",function()
+Tab1:Button("🍕 • Get Rainbow Pizza Box",function()
     local args = {
     [1] = "RainbowPizzaBox"
 }
@@ -131,9 +131,9 @@ Tab1:Button("🍕 • Rainbow Pizza Box",function()
 game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("GiveTool"):FireServer(unpack(args))
 end)
 
-Tab1:Seperator("↩️ = Other Items = ↩️")
+Tab1:Seperator("↩️ = Get Other Items = ↩️")
 
-Tab1:Button("🗡️ • Crowbar",function()
+Tab1:Button("🗡️ • Get Crowbar",function()
     local args = {
     [1] = "Crowbar"
 }
@@ -141,7 +141,7 @@ Tab1:Button("🗡️ • Crowbar",function()
 game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("GiveTool"):FireServer(unpack(args))
 end)
 
-Tab1:Button("🩺 • MedKit",function()
+Tab1:Button("🩺 • Get MedKit",function()
     local args = {
     [1] = "MedKit"
 }
@@ -149,7 +149,7 @@ Tab1:Button("🩺 • MedKit",function()
 game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("GiveTool"):FireServer(unpack(args))
 end)
 
-Tab1:Button("🔋 • Battery",function()
+Tab1:Button("🔋 • Get Battery",function()
     local args = {
     [1] = "Battery"
 }
@@ -157,7 +157,7 @@ Tab1:Button("🔋 • Battery",function()
 game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("GiveTool"):FireServer(unpack(args))
 end)
 
-Tab1:Button("🔑 • Key Of Uncle Pete Prison Cell",function()
+Tab1:Button("🔑 • Get Key Of Uncle Pete Prison Cell",function()
     local args = {
     [1] = "Key"
 }
@@ -231,7 +231,7 @@ if plrRP then
 end
 end)
 
-Tab2:Button("🎭 • Place To Kill Thieves",function()
+Tab2:Button("🎭 • Fight Whit Thieves",function()
     local plr = game.Players.LocalPlayer
 local plrRP = plr.Character:FindFirstChild("HumanoidRootPart")
 if plrRP then
@@ -278,7 +278,7 @@ if plrRP then
 end
 end)
 
-Tab2:Button("👴 • Uncle Pete",function()
+Tab2:Button("👴 • Uncle Pete Prison Cell",function()
     local plr = game.Players.LocalPlayer
 local plrRP = plr.Character:FindFirstChild("HumanoidRootPart")
 if plrRP then
