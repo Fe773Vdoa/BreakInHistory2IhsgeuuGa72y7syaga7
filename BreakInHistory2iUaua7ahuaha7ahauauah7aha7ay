@@ -362,7 +362,7 @@ end
 setBrightness()
 end)
 
-Tab4:Button("✨ • Anti Lag/Boost Fps",function()
+Tab4:Button("🚀 • Anti Lag/Boost Fps",function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/Fe773Vdoa/BreakInHistory2IhsgeuuGa72y7syaga7/main/AntiLag"))()
 end)
 
