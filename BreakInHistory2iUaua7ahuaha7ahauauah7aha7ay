@@ -249,6 +249,44 @@ if plrRP then
 end
 end)
 
+Tab2:Seperator("🐕 = Teleport To NPC = 🕵️")
+
+Tab2:Button("🐕 • Dog",function()
+    local partfind = "TheHouse.SmallCat.Torso2" 
+
+for _,part in pairs(workspace:GetDescendants()) do
+  local partname1 = string.upper(part.Name)
+  local partname2 = string.upper(partfind)
+  if string.find(partname1, partname2) then
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = part.CFrame
+  end
+end
+end)
+
+Tab2:Button("🕵️ • Detective Beans",function()
+    local partfind = "AgentBeans.Part" 
+
+for _,part in pairs(workspace:GetDescendants()) do
+  local partname1 = string.upper(part.Name)
+  local partname2 = string.upper(partfind)
+  if string.find(partname1, partname2) then
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = part.CFrame
+  end
+end
+end)
+
+Tab2:Button("👴 • Uncle Pete",function()
+    local partfind = "UnclePete.FatherTime.Handle" 
+
+for _,part in pairs(workspace:GetDescendants()) do
+  local partname1 = string.upper(part.Name)
+  local partname2 = string.upper(partfind)
+  if string.find(partname1, partname2) then
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = part.CFrame
+  end
+end
+end)
+
 Tab2:Seperator("↩️ = Others Teleports = ↩️")
 
 Tab2:Button("🐕 • Dog House",function()
@@ -266,7 +304,7 @@ if plrRP then
 end
 end)
 
-Tab2:Button("🕵️ • Detective Room",function()
+Tab2:Button("🕵️ • Detective Beans Room",function()
     local plr = game.Players.LocalPlayer
 local plrRP = plr.Character:FindFirstChild("HumanoidRootPart")
 if plrRP then
