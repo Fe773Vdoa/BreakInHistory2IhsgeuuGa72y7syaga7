@@ -17,6 +17,7 @@ local function UnequipAllTools()
 			end
 		end
 	end
+
 	local function EquipAllTools()
 		for i, v in pairs(LocalPlayer.Backpack:GetChildren()) do
 			if v:IsA("Tool") then
@@ -24,6 +25,7 @@ local function UnequipAllTools()
 			end
 		end
 	end
+
 	local function GiveItem(Item)
 		if Item == "Armor" then
 			Events:WaitForChild("Vending"):FireServer(3, "Armor2", "Armor", tostring(LocalPlayer), 1)
@@ -31,15 +33,19 @@ local function UnequipAllTools()
 			Events:WaitForChild("GiveTool"):FireServer(tostring(Item:gsub(" ", "")))
 		end
 	end
+
 	local function Train(Ability)
 		Events:WaitForChild("RainbowWhatStat"):FireServer(Ability)
 	end
+
 	local function TakeDamange(Amount)
 		Events:WaitForChild("Energy"):FireServer(-Amount, false, false)
 	end
+
 	local function TeleportTo(CFrameArg)
 		LocalPlayer.Character.HumanoidRootPart.CFrame = CFrameArg
 	end
+
 	local function HealAllPlayers()
 		UnequipAllTools()
 		task.wait(.2)
@@ -49,10 +55,12 @@ local function UnequipAllTools()
 		task.wait(.5)
 		Events:WaitForChild("HealTheNoobs"):FireServer()
 	end
+
 	local function HealYourself()
 		GiveItem("Pizza")
 		Events.Energy:FireServer(25, "Pizza")
 	end
+
 	local function BreakBarricades()
 		for i, v in pairs(game:GetService("Workspace").FallenTrees:GetChildren()) do
 			for i = 1, 20 do
@@ -62,6 +70,7 @@ local function UnequipAllTools()
 			end
 		end
 	end
+
 	local function BreakEnemies()
 		pcall(function()
 			for i, v in pairs(game:GetService("Workspace").BadGuys:GetChildren()) do
@@ -75,6 +84,7 @@ local function UnequipAllTools()
 			end
 		end)
 	end
+
 	local function KillEnemies()
 		pcall(function()
 			for i, v in pairs(game:GetService("Workspace").BadGuys:GetChildren()) do
@@ -127,9 +137,11 @@ local function UnequipAllTools()
 		wait(.5)
 		Events.KeyEvent:FireServer()
 	end
+
 	local function ClickPete()
 		fireclickdetector(game:GetService("Workspace").UnclePete.ClickDetector)
 	end
+
 	local function CollectCash()
 		for i, v in pairs(game:GetService("Workspace"):GetChildren()) do
 			if v.Name == "Part" and v:FindFirstChild("TouchInterest") and v:FindFirstChild("Weld") and v.Transparency == 1 then
@@ -137,6 +149,7 @@ local function UnequipAllTools()
 			end
 		end
 	end
+
 	local function GetAllOutsideItems()
 		TeleportTo(CFrame.new(-199.240555, 30.0009422, -790.182739, 0.08340507, 2.48169538e-08, 0.996515751, -2.7112752e-09, 1, -2.46767993e-08, -0.996515751, -6.43658127e-10, 0.08340507))
 		for i, v in pairs(game:GetService("Workspace").OutsideParts:GetChildren()) do
@@ -144,6 +157,7 @@ local function UnequipAllTools()
 		end
 		LocalPlayer.Character.Humanoid:MoveTo(LocalPlayer.Character.HumanoidRootPart.Position + Vector3.new(-10, 0, 0))
 	end
+
 	local function BringAllEnemies()
 		pcall(function()
 			for i, v in pairs(game:GetService("Workspace").BadGuys:GetChildren()) do
@@ -161,6 +175,7 @@ local function UnequipAllTools()
 			end
 		end)
 	end
+
 	local function Noclip(State)
 		LocalPlayer.Character.HumanoidRootPart.CanCollide = State
 		for i, v in pairs(LocalPlayer.Character:GetChildren()) do
@@ -169,6 +184,7 @@ local function UnequipAllTools()
 			end
 		end
 	end
+
 	local function GetSecretEnding()
 		for i, v in next, SecretEndingTable do
 			Events.LarryEndingEvent:FireServer(v, true)
@@ -201,6 +217,7 @@ local function UnequipAllTools()
 			end
 		end
 	end
+
 	local function AntiWind()
 		if game:GetService("Workspace"):FindFirstChild("WavePart") then
 			game:GetService("Workspace").WavePart.CanTouch = false
@@ -504,13 +521,13 @@ TabN:Line()
 TabN:Seperator("👊 = Kill Enemies = 🎭")
 
 TabN:Button("🎭 • Kill All Enemies",function()
-    for i = 1, 10 do
+                        for i = 1, 10 do
 				KillEnemies()
 			end
 end)
 
 TabN:Toggle("🌀 • Loop Kill All Enemies",false,function(Value)
-getgenv().KillAllLoop = Value
+                        getgenv().KillAllLoop = Value
 			while KillAllLoop do
 				for i = 1, 3 do
 					KillEnemies()
@@ -526,7 +543,7 @@ TabN:Button("🎭 • Break All Enemies",function()
 end)
 
 TabN:Toggle("🌀 • Loop Break All Enemies",false,function(Value)
-getgenv().BreakAllLoop = Value
+                        getgenv().BreakAllLoop = Value
 			while BreakAllLoop do
 				BreakEnemies()
 				task.wait(1)
@@ -540,7 +557,7 @@ TabN:Button("🎭 • Bring All Enemies",function()
 end)
 
 TabN:Toggle("🌀 • Loop Bring All Enemies",false,function(Value)
-getgenv().BringAllLoop = Value
+                        getgenv().BringAllLoop = Value
 			while BringAllLoop do
 				BringAllEnemies()
 				task.wait(.1)
@@ -625,7 +642,7 @@ Tab4:Button("♥️ • Healt Yourself",function()
 end)
 
 Tab4:Toggle("🌀 • Loop Healt Yourself",false,function(Value)
-getgenv().HealLoop = Value
+                        getgenv().HealLoop = Value
 			while HealLoop do
 				HealYourself()
 				task.wait(.1)
@@ -639,7 +656,7 @@ Tab4:Button("♥️ • Healt All",function()
 end)
 
 Tab4:Toggle("🌀 • Loop Healt All",false,function(Value)
-getgenv().HealAllLoop = Value
+                        getgenv().HealAllLoop = Value
 			while HealAllLoop do
 				HealAllPlayers()
 				task.wait(3)
@@ -649,7 +666,7 @@ getgenv().HealAllLoop = Value
 Tab4:Seperator("🐕 = NPC's = 🕵️")
 
 Tab4:Button("🌐 • Get All NPC's",function()
-    GetDog()
+                        GetDog()
 			task.wait(5)
 			GetAgent()
 			task.wait(1)
@@ -675,7 +692,7 @@ Tab4:Button("💵 • Collect Cash",function()
 end)
 
 Tab4:Toggle("💵 • Auto Collect Cash",false,function(Value)
-getgenv().CollectAllCash = Value
+                        getgenv().CollectAllCash = Value
 
 			while CollectAllCash do
 				CollectCash()
@@ -690,7 +707,7 @@ Tab4:Button("🤨 • Get Secret Ending",function()
 end)
 
 Tab4:Toggle("👴 • Auto Claim Uncle Pete Quests",false,function(Value)
-getgenv().AutoPete = Value
+                        getgenv().AutoPete = Value
 
 			while AutoPete do
 				ClickPete()
