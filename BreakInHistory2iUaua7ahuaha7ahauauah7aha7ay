@@ -8,53 +8,153 @@ local Library = DarkraiX:Window("Harlen Hub","","",Enum.KeyCode.RightControl);
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Fe773Vdoa/ButtonIJheushauuaya7Ha7auuahd-s/main/ButtonIahhwuaha7wg7wyee8"))()
 
+--- Floating Part
+    
+	local Part = Instance.new("Part")
+	Part.Size = Vector3.new(5, 1, 5)
+	Part.Parent = game:GetService("Workspace")
+	Part.Anchored = true
+	Part.Transparency = 1
+
+--- Locals
+	
+	local Events = game:GetService("ReplicatedStorage"):WaitForChild("Events")
+	local SelectedItem = "Med Kit"
+	local Damange = 5
+	local namecall
+	local ScriptLoaded = false
+	local LocalPlayer = game:GetService("Players").LocalPlayer
+	local Lighting = game:GetService("Lighting")
+	local OriginalWalkspeed = LocalPlayer.Character.Humanoid.WalkSpeed
+	local OriginalJumpPower = LocalPlayer.Character.Humanoid.JumpPower
+	local ModifiedWalkspeed = 50
+	local ModifiedJumpPower = 100
+	local OriginalBrightness = Lighting.Brightness
+	local OriginalFog = Lighting.FogEnd
+	local OriginalShadow = Lighting.GlobalShadows
+	local HailClone = game:GetService("Workspace").Hails:Clone()
+	getgenv().RemoveSlipping = false
+	getgenv().SemiGodmode = false
+
+    -- Remove Slipping Handler
+	local mt = getrawmetatable(game)
+	local old = mt.__namecall
+	setreadonly(mt, false)
+	mt.__namecall = newcclosure(function(self, ...)
+		local args = {
+			...
+		}
+		if getnamecallmethod() == 'FireServer' and self.Name == 'IceSlip' and RemoveSlipping == true then
+			return wait(387420489)
+		end
+		return old(self, unpack(args))
+	end)
+
+    -- Semi-Godmode Handler
+	namecall = hookmetamethod(game, "__namecall", function(self, ...)
+		local args = {
+			...
+		}
+		if getnamecallmethod() == 'FireServer' and self.Name == 'Energy' then
+			if SemiGodmode == true then
+				if args[1] < 0 then
+					args[1] = 0
+				end
+			else
+				args[1] = args[1]
+			end
+			return namecall(self, unpack(args))
+		end
+		return namecall(self, ...)
+	end)
+
+--- Tables
+
+	local SecretEndingTable = {
+		"HatCollected",
+		"MaskCollected",
+		"CrowbarCollected"
+	}
+	local ItemsTable = {
+		"Armor",
+		"Med Kit",
+		"Key",
+		"Gold Key",
+		"Louise",
+		"Lollipop",
+		"Chips",
+		"Golden Apple",
+		"Pizza",
+		"Gold Pizza",
+		"Rainbow Pizza",
+		"Rainbow Pizza Box",
+		"Book",
+		"Phone",
+		"Cookie",
+		"Apple",
+		"Bloxy Cola",
+		"Expired Bloxy Cola",
+		"Bottle",
+		"Ladder",
+		"Battery"
+	}
+
 --- Functions
 
-local C = {
- UnequipAllTools() = for i, v in pairs(LocalPlayer.Character:GetChildren()) do
+	local function UnequipAllTools()
+		for i, v in pairs(LocalPlayer.Character:GetChildren()) do
 			if v:IsA("Tool") then
 				v.Parent = LocalPlayer.Backpack
 			end
 		end
-
- EquipAllTools() = for i, v in pairs(LocalPlayer.Backpack:GetChildren()) do
+	end
+	local function EquipAllTools()
+		for i, v in pairs(LocalPlayer.Backpack:GetChildren()) do
 			if v:IsA("Tool") then
 				v.Parent = LocalPlayer.Character
 			end
 		end
-
- GiveItem(Item) = if Item == "Armor" then
+	end
+	local function GiveItem(Item)
+		if Item == "Armor" then
 			Events:WaitForChild("Vending"):FireServer(3, "Armor2", "Armor", tostring(LocalPlayer), 1)
 		else
 			Events:WaitForChild("GiveTool"):FireServer(tostring(Item:gsub(" ", "")))
 		end
-
- Train(Ability) = Events:WaitForChild("RainbowWhatStat"):FireServer(Ability)
-
- TakeDamange(Amount) = Events:WaitForChild("Energy"):FireServer(-Amount, false, false)
-
- TeleportTo(CFrameArg) = LocalPlayer.Character.HumanoidRootPart.CFrame = CFrameArg
-
- HealAllPlayers() = UnequipAllTools()
+	end
+	local function Train(Ability)
+		Events:WaitForChild("RainbowWhatStat"):FireServer(Ability)
+	end
+	local function TakeDamange(Amount)
+		Events:WaitForChild("Energy"):FireServer(-Amount, false, false)
+	end
+	local function TeleportTo(CFrameArg)
+		LocalPlayer.Character.HumanoidRootPart.CFrame = CFrameArg
+	end
+	local function HealAllPlayers()
+		UnequipAllTools()
 		task.wait(.2)
 		GiveItem("Golden Apple")
 		task.wait(.5)
 		LocalPlayer.Backpack:WaitForChild("GoldenApple").Parent = LocalPlayer.Character
 		task.wait(.5)
 		Events:WaitForChild("HealTheNoobs"):FireServer()
-
- HealYourself() = GiveItem("Pizza")
+	end
+	local function HealYourself()
+		GiveItem("Pizza")
 		Events.Energy:FireServer(25, "Pizza")
-
- BreakBarricades() = for i, v in pairs(game:GetService("Workspace").FallenTrees:GetChildren()) do
+	end
+	local function BreakBarricades()
+		for i, v in pairs(game:GetService("Workspace").FallenTrees:GetChildren()) do
 			for i = 1, 20 do
 				if v:FindFirstChild("TreeHitPart") then
 					Events.RoadMissionEvent:FireServer(1, v.TreeHitPart, 5)
 				end
 			end
 		end
-
- BreakEnemies() = pcall(function()
+	end
+	local function BreakEnemies()
+		pcall(function()
 			for i, v in pairs(game:GetService("Workspace").BadGuys:GetChildren()) do
 				v:FindFirstChild("Humanoid", true).Health = 0
 			end
@@ -65,8 +165,9 @@ local C = {
 				v:FindFirstChild("Humanoid", true).Health = 0
 			end
 		end)
-
- KillEnemies() = pcall(function()
+	end
+	local function KillEnemies()
+		pcall(function()
 			for i, v in pairs(game:GetService("Workspace").BadGuys:GetChildren()) do
 				Events:WaitForChild("HitBadguy"):FireServer(v, 64.8, 4)
 			end
@@ -83,8 +184,10 @@ local C = {
 				Events:WaitForChild("HitBadguy"):FireServer(game:GetService("Workspace").BadGuyBrute, 64.8, 4)
 			end
 		end)
+	end
 
- GetDog() = for i, v in pairs(game:GetService("Players").LocalPlayer.PlayerGui.Assets.Note.Note.Note:GetChildren()) do
+	local function GetDog()
+		for i, v in pairs(game:GetService("Players").LocalPlayer.PlayerGui.Assets.Note.Note.Note:GetChildren()) do
 			if v.Name:match("Circle") and v.Visible == true then
 				GiveItem(tostring(v.Name:gsub("Circle", "")))
 				task.wait(.1)
@@ -99,33 +202,41 @@ local C = {
 			TeleportTo(CFrame.new(-203.533081, 30.4500484, -790.901428, -0.0148558766, 8.85941187e-09, -0.999889672, 2.65695732e-08, 1, 8.46563175e-09, 0.999889672, -2.64408779e-08, -0.0148558766) + Vector3.new(0, 5, 0))
 			task.wait(.1)
 		end
+	end
 
- GetAgent() = GiveItem("Louise")
+	local function GetAgent()
+		GiveItem("Louise")
 		task.wait(.1)
 		LocalPlayer.Backpack:WaitForChild("Louise").Parent = LocalPlayer.Character
 		Events:WaitForChild("LouiseGive"):FireServer(2)
+	end
 
- GetUncle() = GiveItem("Key")
+	local function GetUncle()
+		GiveItem("Key")
 		task.wait(.1)
 		LocalPlayer.Backpack:WaitForChild("Key").Parent = LocalPlayer.Character
 		wait(.5)
 		Events.KeyEvent:FireServer()
-
- ClickPete() = fireclickdetector(game:GetService("Workspace").UnclePete.ClickDetector)
-
- CollectCash() = for i, v in pairs(game:GetService("Workspace"):GetChildren()) do
+	end
+	local function ClickPete()
+		fireclickdetector(game:GetService("Workspace").UnclePete.ClickDetector)
+	end
+	local function CollectCash()
+		for i, v in pairs(game:GetService("Workspace"):GetChildren()) do
 			if v.Name == "Part" and v:FindFirstChild("TouchInterest") and v:FindFirstChild("Weld") and v.Transparency == 1 then
 				firetouchinterest(v, LocalPlayer.Character.HumanoidRootPart, 0)
 			end
 		end
-
- GetAllOutsideItems() = TeleportTo(CFrame.new(-199.240555, 30.0009422, -790.182739, 0.08340507, 2.48169538e-08, 0.996515751, -2.7112752e-09, 1, -2.46767993e-08, -0.996515751, -6.43658127e-10, 0.08340507))
+	end
+	local function GetAllOutsideItems()
+		TeleportTo(CFrame.new(-199.240555, 30.0009422, -790.182739, 0.08340507, 2.48169538e-08, 0.996515751, -2.7112752e-09, 1, -2.46767993e-08, -0.996515751, -6.43658127e-10, 0.08340507))
 		for i, v in pairs(game:GetService("Workspace").OutsideParts:GetChildren()) do
 			fireclickdetector(v.ClickDetector)
 		end
 		LocalPlayer.Character.Humanoid:MoveTo(LocalPlayer.Character.HumanoidRootPart.Position + Vector3.new(-10, 0, 0))
-
- BringAllEnemies() = pcall(function()
+	end
+	local function BringAllEnemies()
+		pcall(function()
 			for i, v in pairs(game:GetService("Workspace").BadGuys:GetChildren()) do
 				v.HumanoidRootPart.Anchored = true
 				v.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, -4)
@@ -140,19 +251,23 @@ local C = {
 				v.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, -4)
 			end
 		end)
-
- Noclip(State) = LocalPlayer.Character.HumanoidRootPart.CanCollide = State
+	end
+	local function Noclip(State)
+		LocalPlayer.Character.HumanoidRootPart.CanCollide = State
 		for i, v in pairs(LocalPlayer.Character:GetChildren()) do
 			if v:IsA("MeshPart") then
 				v.CanCollide = State
 			end
 		end
-
- GetSecretEnding() = for i, v in next, SecretEndingTable do
+	end
+	local function GetSecretEnding()
+		for i, v in next, SecretEndingTable do
 			Events.LarryEndingEvent:FireServer(v, true)
 		end
+	end
 
- GetGAppleBadge() = for i, v in pairs(game:GetService("Workspace").FallenTrees:GetChildren()) do
+	local function GetGAppleBadge()
+		for i, v in pairs(game:GetService("Workspace").FallenTrees:GetChildren()) do
 			for i = 1, 20 do
 				if v:FindFirstChild("TreeHitPart") then
 					Events.RoadMissionEvent:FireServer(1, v.TreeHitPart, 5)
@@ -164,8 +279,10 @@ local C = {
 		TeleportTo(CFrame.new(61.8781624, 29.4499969, -534.381165, -0.584439218, -1.05103076e-07, 0.811437488, -3.12853778e-08, 1, 1.06993674e-07, -0.811437488, 3.71451705e-08, -0.584439218))
 		task.wait(.5)
 		fireclickdetector(game:GetService("Workspace").GoldenApple.ClickDetector)
+	end
 
- AntiMud(Touchable) = for i, v in pairs(game:GetService("Workspace").BogArea.Bog:GetDescendants()) do
+	local function AntiMud(Touchable)
+		for i, v in pairs(game:GetService("Workspace").BogArea.Bog:GetDescendants()) do
 			if v.Name == "Mud" and v:IsA("Part") then
 				if Touchable == true then
 					v.CanTouch = false
@@ -174,11 +291,12 @@ local C = {
 				end
 			end
 		end
-
- AntiWind() = if game:GetService("Workspace"):FindFirstChild("WavePart") then
+	end
+	local function AntiWind()
+		if game:GetService("Workspace"):FindFirstChild("WavePart") then
 			game:GetService("Workspace").WavePart.CanTouch = false
 		end
-}
+	end
 
 --- Tabs
 
@@ -478,12 +596,12 @@ TabN:Seperator("👊 = Kill Enemies = 🎭")
 
 TabN:Button("🎭 • Kill All Enemies",function()
                         for i = 1, 10 do
-				C.KillEnemies()
+				KillEnemies()
 			end
 end)
 
 TabN:Toggle("🌀 • Loop Kill All Enemies",false,function(Value)
-                        C.KillAllLoop = Value
+                        getgenv().KillAllLoop = Value
 			while KillAllLoop do
 				for i = 1, 3 do
 					KillEnemies()
@@ -495,13 +613,13 @@ TabN:Toggle("🌀 • Loop Kill All Enemies",false,function(Value)
 TabN:Seperator("🎭 = Break Enemies = 🎭")
 
 TabN:Button("🎭 • Break All Enemies",function()
-    C.BreakEnemies()
+    BreakEnemies()
 end)
 
 TabN:Toggle("🌀 • Loop Break All Enemies",false,function(Value)
-                        C.BreakAllLoop = Value
+                        getgenv().BreakAllLoop = Value
 			while BreakAllLoop do
-				C.BreakEnemies()
+				BreakEnemies()
 				task.wait(1)
 			end
     end)
@@ -509,13 +627,13 @@ TabN:Toggle("🌀 • Loop Break All Enemies",false,function(Value)
 TabN:Seperator("🎭 = Bring Enemies = 🎭")
 
 TabN:Button("🎭 • Bring All Enemies",function()
-    C.BringAllEnemies()
+    BringAllEnemies()
 end)
 
 TabN:Toggle("🌀 • Loop Bring All Enemies",false,function(Value)
-                        C.BringAllLoop = Value
+                        getgenv().BringAllLoop = Value
 			while BringAllLoop do
-				C.BringAllEnemies()
+				BringAllEnemies()
 				task.wait(.1)
 			end
     end)
@@ -593,14 +711,14 @@ Tab4:Seperator("♥️ = Healt Yourself = 🩺")
 
 Tab4:Button("♥️ • Healt Yourself",function()
     for i = 1, 10 do
-				C.HealYourself()
-			end
+				HealYourself()
+    end
 end)
 
 Tab4:Toggle("🌀 • Loop Healt Yourself",false,function(Value)
-                        C.HealLoop = Value
+                        getgenv().HealLoop = Value
 			while HealLoop do
-				C.HealYourself()
+				HealYourself()
 				task.wait(.1)
 			end
     end)
@@ -608,13 +726,13 @@ Tab4:Toggle("🌀 • Loop Healt Yourself",false,function(Value)
 Tab4:Seperator("♥️ = Healt All = 🌐")
 
 Tab4:Button("♥️ • Healt All",function()
-    C.HealAllPlayers()
+    HealAllPlayers()
 end)
 
 Tab4:Toggle("🌀 • Loop Healt All",false,function(Value)
-                        C.HealAllLoop = Value
+                        getgenv().HealAllLoop = Value
 			while HealAllLoop do
-				C.HealAllPlayers()
+				HealAllPlayers()
 				task.wait(3)
 			end
     end)
@@ -622,36 +740,36 @@ Tab4:Toggle("🌀 • Loop Healt All",false,function(Value)
 Tab4:Seperator("🐕 = NPC's = 🕵️")
 
 Tab4:Button("🌐 • Get All NPC's",function()
-                        C.GetDog()
+                        GetDog()
 			task.wait(5)
-			C.GetAgent()
+			GetAgent()
 			task.wait(1)
-			C.GetUncle()
+			GetUncle()
 end)
 
 Tab4:Button("🐕 • Get Dog",function()
-    C.GetDog()
+    GetDog()
 end)
 
 Tab4:Button("🕵️ • Get Agent Beans",function()
-    C.GetAgent()
+    GetAgent()
 end)
 
 Tab4:Button("👴 • Get Uncle Pet",function()
-    C.GetUncle()
+    GetUncle()
 end)
 
 Tab4:Seperator("💵 = Cash = 💵")
 
 Tab4:Button("💵 • Collect Cash",function()
-    C.CollectCash()
+    CollectCash()
 end)
 
 Tab4:Toggle("💵 • Auto Collect Cash",false,function(Value)
-                        C.CollectAllCash = Value
+                        getgenv().CollectAllCash = Value
 
 			while CollectAllCash do
-				C.CollectCash()
+				CollectCash()
 				task.wait(1)
 			end
     end)
@@ -659,24 +777,24 @@ Tab4:Toggle("💵 • Auto Collect Cash",false,function(Value)
 Tab4:Seperator("↩️ = Others = ↩️")
 
 Tab4:Button("🤨 • Get Secret Ending",function()
-    C.GetSecretEnding()
+    GetSecretEnding()
 end)
 
 Tab4:Toggle("👴 • Auto Claim Uncle Pete Quests",false,function(Value)
-                        C.AutoPete = Value
+                        getgenv().AutoPete = Value
 
 			while AutoPete do
-				C.ClickPete()
+				ClickPete()
 				task.wait(10)
 			end
     end)
 
 Tab4:Button("🍎 • Get Badge Golden Apple",function()
-    C.GetGAppleBadge()
+    GetGAppleBadge()
 end)
 
 Tab4:Button("🪓 • Break All Barricades",function()
-    C.BreakBarricades()
+    BreakBarricades()
 end)
 
 Tab4:Line()
